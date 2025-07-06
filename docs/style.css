@@ -1,4 +1,55 @@
 body {
-  font-family: sans-serif;
+  font-family: "Helvetica", sans-serif;
+  text-align: center;
+  background-color: #f8f9fa;
   padding: 20px;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+#cameraInput {
+  display: none;
+}
+
+#uploadLabel {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+#analyzeBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#analyzeBtn:hover,
+#uploadLabel:hover {
+  opacity: 0.9;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #555;
+}
+
+.notice {
+  color: green;
+  font-size: 15px;
+  margin-bottom: 15px;
+  display: none;
 }

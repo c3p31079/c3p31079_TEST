@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <title>画像解析デモ</title>
+  <meta charset="UTF-8">
+  <title>画像解析アプリ</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>画像を解析する</h1>
-  <input type="file" id="imageInput">
-  <button onclick="sendImage()">送信</button>
-  <div id="result"></div>
+  <h1>画像解析アプリ</h1>
+
+  <p id="mobileNotice" class="notice">📸 スマホのカメラで撮影してください</p>
+
+  <label for="cameraInput" id="uploadLabel">📷 写真を撮る / ファイルを選ぶ</label>
+  <input type="file" id="cameraInput" accept="image/*" capture="environment">
+
+  <button id="analyzeBtn">解析する</button>
+
+  <p id="result"></p>
 
   <script src="script.js"></script>
 </body>
