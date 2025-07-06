@@ -29,9 +29,9 @@ analyzeBtn.addEventListener("click", async () => {
 
 // Render上のFlask APIに画像をPOST（非同期通信）
   try {
-    fetch("https://c3p31079-test.onrender.com/analyze", {
-  method: "POST",
-  body: formData
+    const response = await fetch("https://c3p31079-test.onrender.com/analyze", {
+      method: "POST",
+      body: formData
     });
 
     if (!response.ok) throw new Error("サーバーエラー");
