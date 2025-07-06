@@ -9,6 +9,7 @@ if (isMobile) {
 const cameraInput = document.getElementById("cameraInput");
 const analyzeBtn = document.getElementById("analyzeBtn");
 const resultArea = document.getElementById("result");
+
 // 「解析する」ボタンが押されたときに実行される処理
 // 画像ファイルが選ばれていない場合は警告を出して終了
 analyzeBtn.addEventListener("click", async () => {
@@ -23,14 +24,14 @@ analyzeBtn.addEventListener("click", async () => {
   const formData = new FormData();
   formData.append("image", file);
 
-// Loading now的なヤツ
+// Loading now
   resultArea.textContent = "解析中...";
 
 // Render上のFlask APIに画像をPOST（非同期通信）
   try {
-    const response = await fetch("https://c3p31079-test.onrender.com/analyze", {
-      method: "POST",
-      body: formData
+    fetch("https://c3p31079-test.onrender.com/analyze", {
+  method: "POST",
+  body: formData
     });
 
     if (!response.ok) throw new Error("サーバーエラー");

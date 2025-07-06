@@ -12,5 +12,9 @@ def analyze():
     height, width = img.shape[:2]
     return jsonify({'width': width, 'height': height})
 
+@app.route('/')
+def home():
+    return '✅ API is alive. POST to /analyze with image file.'
+
 if __name__ == '__main__':
     app.run(debug=True)
