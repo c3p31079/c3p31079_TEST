@@ -3,20 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>画像解析アプリ</title>
+
+  <!-- スタイル（CSS）を読み込み -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>画像解析アプリ</h1>
 
+  <!-- スマホだけ表示する注意文（JSで出し分け） -->
   <p id="mobileNotice" class="notice">📸 スマホのカメラで撮影してください</p>
 
+  <!-- ファイルアップロードの見た目用ボタン -->
   <label for="cameraInput" id="uploadLabel">📷 写真を撮る / ファイルを選ぶ</label>
+
+  <!-- 実際のファイル入力欄（非表示） -->
   <input type="file" id="cameraInput" accept="image/*" capture="environment">
 
+  <!-- 解析ボタン -->
   <button id="analyzeBtn">解析する</button>
 
+  <!-- 結果表示欄 -->
   <p id="result"></p>
 
+  <!-- JavaScriptファイルの読み込み -->
   <script src="script.js"></script>
 </body>
 </html>
