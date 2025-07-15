@@ -1,8 +1,10 @@
+# backend/app.py
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from crack_detector import detect_crack_length
 
 app = Flask(__name__)
-CORS(app)  #全ルートがCORS許可される
+CORS(app)
 
 @app.route('/')
 def index():
@@ -14,10 +16,7 @@ def analyze():
     if not file:
         return jsonify({'error': 'No file provided'}), 400
 
-    from PIL import Image
-    import io
+    image_bytes = file.read()
+    result = detect_crack_length(image_bytes)
 
-    image = Image.open(file.stream)
-    width, height = image.size
-
-    return jsonify({'width': width, 'height': height})
+    return jsonify(result)
